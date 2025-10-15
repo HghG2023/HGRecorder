@@ -87,22 +87,37 @@
       margin: 0;
     }
 
-    .event {
-      display: flex;
-      flex-direction: column;
-      background: #f8faff;
-      border: 1px solid #e2e8f0;
-      border-left: 6px solid #4c8bf5;
-      padding: 16px 20px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      transition: all 0.25s ease;
-    }
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
 
-    .event:hover {
-      background: #e8f0fe;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(76,139,245,0.2);
+.event:hover {
+    background-color: #f0f4ff;
+    border-color: #8aa1ff;
+    transform: translateY(-2px);
+}
+
+/* 去掉链接下划线 */
+.event-content {
+    text-decoration: none;
+    color: inherit;
+    flex-grow: 1;
+}
+
+    /* 确保链接内的元素没有下划线 */
+    .event-content .date,
+    .event-content .time,
+    .event-content .desc {
+        text-decoration: none;
     }
 
     .event li {
@@ -132,6 +147,22 @@
       font-size: 1.1rem;
     }
 
+    .complete-btn {
+      margin-left: 15px;
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .complete-btn:hover {
+      background-color: #45a049;
+    }
+
     /* 响应式布局 */
     @media (max-width: 600px) {
       .container {
@@ -140,6 +171,13 @@
       }
       .event {
         padding: 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .complete-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        align-self: flex-end;
       }
     }
   </style>
@@ -162,21 +200,77 @@
         <span class="text">学习</span>
     </a>
     </div>
-
-
-    <ul>
-      {% for event in events %}
-      <div class="event">
-        <li class="date">{{ event['dates'] }}</li>
-        <li class="time">{{ event['times'] }}</li>
-        <li class="desc">{{ event['events'] }}</li>
-      </div>
-      {% else %}
-      <div class="event empty">
-        <li>今天没有事件 🎉</li>
-      </div>
-      {% endfor %}
-    </ul>
+        <ul>
+            {% for event in events %}
+            <div class="event">
+                <a href="/detail/{{ event.event_id }}" class="event-content">
+                    <li class="date">📅 日期：{{ event.dates }}</li>
+                    <li class="time">🕒 时间：{{ event.times }}</li>
+                    <li class="desc">📝 内容：{{ event.events }}</li>
+                </a>
+            <button class="complete-btn" 
+                    data-event-id="{{ event.event_id }}"
+                    {{ 'disabled' if event.done else '' }}>
+                {{ '已完成' if event.done else '完成' }}
+            </button>
+            </div>
+            {% else %}
+            <div class="event empty">
+                <li>今天没有事件 🎉</li>
+            </div>
+            {% endfor %}
+        </ul>
   </div>
+
+  <script>
+        // 页面加载后绑定事件
+        document.querySelectorAll('.complete-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.disabled) {
+                    const eventId = this.dataset.eventId;
+                    markAsDone(eventId);
+                }
+            });
+        });
+    // 标记事件为已完成的函数
+
+
+    function markAsDone(eventId) {
+      // 发送请求到后端更新数据库
+
+      fetch(`/api/events/${eventId}`, {
+        method: 'PUT',  // 改为PUT方法
+        headers: {
+          'Content-Type': 'application/json',
+          // 'X-CSRFToken': getCSRFToken()
+        },
+        body: JSON.stringify({'done': 1})  // 明确传递done字段
+      })
+
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('更新失败');
+        }
+        return response.json();
+      })
+      //refresh page
+      .then(data => {
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error('错误:', error);
+        alert('操作失败，请重试');
+      });
+    }
+
+    // 如果需要CSRF保护，可以添加获取CSRF令牌的函数
+    // function getCSRFToken() {
+    //   const cookieValue = document.cookie
+    //     .split('; ')
+    //     .find(row => row.startsWith('csrftoken='))
+    //     ?.split('=')[1];
+    //   return cookieValue;
+    // }
+  </script>
 </body>
 </html>

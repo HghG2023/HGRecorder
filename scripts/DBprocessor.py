@@ -3,7 +3,7 @@ from datetime import datetime
 import sqlite3
 from .path_control import PM
 from .logger import logger
-
+from .eventFormater import format_events
 
 eventsDB_txt = """
 CREATE TABLE IF NOT EXISTS events (
@@ -100,16 +100,6 @@ class ProcessDB():
             self.db_event.rollback()
             return -1
 
-    def read_event(self, event_id: int) -> dict:
-        """根据 event_id 查询单条事件"""
-        sql = "SELECT * FROM events WHERE event_id=?"
-        self.cursor_event.execute(sql, (event_id,))
-        row = self.cursor_event.fetchone()
-        if row:
-            columns = [desc[0] for desc in self.cursor_event.description]
-            return dict(zip(columns, row))
-        return {}
-
     def update_event(self, event_id: int, data: dict) -> bool:
         """更新事件"""
         try:
@@ -142,7 +132,27 @@ class ProcessDB():
 
     # ----------------- 查询函数 -----------------
 
-    def search_events(self, start_time=None, end_time=None, min_importance=None) -> list:
+    def read_event(self, event_id: int) -> dict:
+        """根据 event_id 查询单条事件"""
+        sql = "SELECT * FROM events WHERE event_id=?"
+        self.cursor_event.execute(sql, (event_id,))
+        row = self.cursor_event.fetchone()
+        if row:
+            columns = [desc[0] for desc in self.cursor_event.description]
+            res = dict(zip(columns, row))
+            return format_events(res)
+        return {}
+    
+    def search_events_undo(self):
+        sql = "SELECT * FROM events WHERE done=0"
+        self.cursor_event.execute(sql)
+        rows = self.cursor_event.fetchall()
+        columns = [desc[0] for desc in self.cursor_event.description]
+        res = [dict(zip(columns, row)) for row in rows] 
+        return format_events(res)
+
+
+    def search_events_all(self, start_time=None, end_time=None, min_importance=None) -> list:
         """
         查询事件：
         - start_time, end_time: 时间范围 (字符串 'YYYY-MM-DD HH:MM:SS')
@@ -169,5 +179,6 @@ class ProcessDB():
         self.cursor_event.execute(sql, values)
         rows = self.cursor_event.fetchall()
         columns = [desc[0] for desc in self.cursor_event.description]
-        return [dict(zip(columns, row)) for row in rows]
+        res = [dict(zip(columns, row)) for row in rows] 
+        return format_events(res)
 

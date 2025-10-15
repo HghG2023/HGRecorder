@@ -1,7 +1,7 @@
 from pathlib import Path
 import threading
 import uvicorn
-from app.API import create_api_app
+from api.mainapi import create_api_app
 from app.detect_folder import start_watch
 from app.ASR import ASEProcessor
 from app.OCR import OCRProcessor
@@ -94,6 +94,10 @@ def main():
 if __name__ == "__main__":
     try:
         main()
+        # from scripts.DBprocessor import ProcessDB
+        # c_db = ProcessDB()
+        # print(c_db.search_events_undo())
+
     except KeyboardInterrupt:
         logger.info("用户中断，程序退出")
     except Exception as e:

@@ -77,3 +77,81 @@
 [2025-10-15 15:06:29] [INFO] Login page accessed from 10.4.70.241.
 [2025-10-15 15:06:34] [INFO] Login successful from 10.4.70.241.
 [2025-10-15 15:06:34] [INFO] Index page accessed from 10.4.70.241. Files listed.
+[2025-10-15 17:16:01] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:16:08] [INFO] 文件监控线程已启动
+[2025-10-15 17:16:08] [INFO] 准备启动API服务...
+[2025-10-15 17:16:08] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 17:18:55] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:19:01] [INFO] 文件监控线程已启动
+[2025-10-15 17:19:01] [INFO] 准备启动API服务...
+[2025-10-15 17:19:01] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 17:20:38] [INFO] [ProcessDB] 更新事件成功 event_id=0
+[2025-10-15 17:37:13] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:37:18] [INFO] 文件监控线程已启动
+[2025-10-15 17:37:18] [INFO] 准备启动API服务...
+[2025-10-15 17:37:18] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 17:39:42] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:39:48] [INFO] 文件监控线程已启动
+[2025-10-15 17:39:48] [INFO] 准备启动API服务...
+[2025-10-15 17:39:48] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 17:41:07] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 17:41:41] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 17:52:41] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:52:56] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:53:24] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 17:55:23] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:30:33] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:31:04] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:31:08] [INFO] 文件监控线程已启动
+[2025-10-15 18:31:08] [INFO] 准备启动API服务...
+[2025-10-15 18:31:08] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 18:38:54] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:38:57] [INFO] 文件监控线程已启动
+[2025-10-15 18:38:57] [INFO] 准备启动API服务...
+[2025-10-15 18:38:57] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 18:40:05] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:40:09] [INFO] 文件监控线程已启动
+[2025-10-15 18:40:09] [INFO] 准备启动API服务...
+[2025-10-15 18:40:09] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 18:42:38] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:42:42] [INFO] 文件监控线程已启动
+[2025-10-15 18:42:42] [INFO] 准备启动API服务...
+[2025-10-15 18:42:42] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 18:43:28] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:43:32] [INFO] 文件监控线程已启动
+[2025-10-15 18:43:32] [INFO] 准备启动API服务...
+[2025-10-15 18:43:32] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 18:48:24] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 18:48:28] [INFO] 文件监控线程已启动
+[2025-10-15 18:48:28] [INFO] 准备启动API服务...
+[2025-10-15 18:48:28] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 18:48:46] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 18:48:48] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 18:48:50] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 18:48:50] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 18:48:50] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 18:48:50] [INFO] [ProcessDB] 更新事件成功 event_id=1
+[2025-10-15 18:49:02] [INFO] [ProcessDB] 更新事件成功 event_id=2
+[2025-10-15 19:02:11] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 19:02:17] [INFO] 文件监控线程已启动
+[2025-10-15 19:02:17] [INFO] 准备启动API服务...
+[2025-10-15 19:02:17] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 19:04:38] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 19:05:25] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 19:05:31] [INFO] 文件监控线程已启动
+[2025-10-15 19:05:31] [INFO] 准备启动API服务...
+[2025-10-15 19:05:31] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 19:05:47] [INFO] File uploaded successfully from 127.0.0.1: 1760526347_G6x44XZM.png
+[2025-10-15 19:05:47] [INFO] [开始等待稳定] userdata\uploads\1760526347_G6x44XZM.png
+[2025-10-15 19:05:54] [INFO] File downloaded successfully from 127.0.0.1: 1760526347_G6x44XZM.png
+[2025-10-15 19:05:57] [INFO] [文件稳定] userdata\uploads\1760526347_G6x44XZM.png
+[2025-10-15 19:05:57] [INFO] 检测到图像文件，开始OCR处理: userdata\uploads\1760526347_G6x44XZM.png
+[2025-10-15 19:05:58] [INFO] OCR处理完成，结果保存至: userdata/extract\OCR_result_1760526358_baGt0zdG.txt
+[2025-10-15 19:05:58] [INFO] [ProcessDB] 成功插入事件 event_id=3
+[2025-10-15 19:06:15] [INFO] [ProcessDB] 更新事件成功 event_id=3
+[2025-10-15 19:06:49] [INFO] Text uploaded successfully from 127.0.0.1: 1760526409_5zarFBUx.txt
+[2025-10-15 19:06:49] [INFO] [开始等待稳定] userdata\uploads\1760526409_5zarFBUx.txt
+[2025-10-15 19:06:59] [INFO] [文件稳定] userdata\uploads\1760526409_5zarFBUx.txt
+[2025-10-15 19:06:59] [INFO] 检测到文本文件，开始NER处理: userdata\uploads\1760526409_5zarFBUx.txt
+[2025-10-15 19:06:59] [INFO] [ProcessDB] 成功插入事件 event_id=4
+[2025-10-15 19:07:27] [INFO] [ProcessDB] 更新事件成功 event_id=4

@@ -3,7 +3,19 @@ import socket
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from .API_work import create_app  # 引用app工厂
+from api.auth import router as auth_router
+from api.events import router as events_router
+from api.files import router as files_router
+from api.pages import router as pages_router
+
+def create_app():
+    app = FastAPI(title="HGRecorder API", debug=True)
+    # 注册各模块路由
+    app.include_router(auth_router)
+    app.include_router(events_router)
+    app.include_router(files_router)
+    app.include_router(pages_router)
+    return app
 
 
 def _get_all_ipv4() -> list[str]:
