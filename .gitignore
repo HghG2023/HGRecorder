@@ -8,3 +8,4 @@ resources/yolo5
 *.bat
 *.zip
 userdata/
+*.log
