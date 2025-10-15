@@ -1,0 +1,5 @@
+[2025-10-14 22:04:48] [INFO] 文件监控线程已启动
+[2025-10-14 22:04:48] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-14 22:04:48] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-14 22:04:48] [INFO] 准备启动API服务...
+[2025-10-14 22:27:45] [ERROR] Daily work error: HTTPSConnectionPool(host='www.bbc.co.uk', port=443): Max retries exceeded with url: /learningenglish/english/features/6-minute-english_2025/ep-250904 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001AE60D43190>, 'Connection to www.bbc.co.uk timed out. (connect timeout=None)'))

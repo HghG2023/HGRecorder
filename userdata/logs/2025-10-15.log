@@ -1,0 +1,71 @@
+[2025-10-15 13:06:56] [ERROR] Daily work error: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+[2025-10-15 13:07:10] [INFO] 文件监控线程已启动
+[2025-10-15 13:07:10] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 13:07:10] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 13:07:10] [INFO] 准备启动API服务...
+[2025-10-15 13:07:17] [INFO] Unauthorized access attempt to the index page from 192.168.43.242.
+[2025-10-15 13:07:17] [INFO] Login page accessed from 192.168.43.242.
+[2025-10-15 13:07:22] [INFO] Login successful from 192.168.43.242.
+[2025-10-15 13:07:22] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:07:40] [INFO] File uploaded successfully from 192.168.43.242: 1760504859_rgkJNjDm.jpg
+[2025-10-15 13:07:40] [INFO] [开始等待稳定] userdata\uploads\1760504859_rgkJNjDm.jpg
+[2025-10-15 13:07:40] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:07:50] [INFO] [文件稳定] userdata\uploads\1760504859_rgkJNjDm.jpg
+[2025-10-15 13:07:50] [INFO] 检测到图像文件，开始OCR处理: userdata\uploads\1760504859_rgkJNjDm.jpg
+[2025-10-15 13:07:50] [INFO] OCR处理完成，结果保存至: userdata/extract\OCR_result_1760504870_xMH5KLfv.txt
+[2025-10-15 13:07:50] [INFO] [ProcessDB] 成功插入事件 event_id=1
+[2025-10-15 13:31:06] [INFO] 文件监控线程已启动
+[2025-10-15 13:31:06] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 13:31:06] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 13:31:06] [INFO] 准备启动API服务...
+[2025-10-15 13:31:18] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:31:29] [INFO] File uploaded successfully from 192.168.43.242: 1760506289_reoI2tpK.jpg
+[2025-10-15 13:31:29] [INFO] [开始等待稳定] userdata\uploads\1760506289_reoI2tpK.jpg
+[2025-10-15 13:31:29] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:31:39] [INFO] [文件稳定] userdata\uploads\1760506289_reoI2tpK.jpg
+[2025-10-15 13:31:39] [INFO] 检测到图像文件，开始OCR处理: userdata\uploads\1760506289_reoI2tpK.jpg
+[2025-10-15 13:31:39] [INFO] OCR处理完成，结果保存至: userdata/extract\OCR_result_1760506299_B258S2X6.txt
+[2025-10-15 13:31:39] [ERROR] [ProcessDB] 插入失败: table events has no column named done
+[2025-10-15 13:33:09] [INFO] 文件监控线程已启动
+[2025-10-15 13:33:09] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 13:33:09] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 13:33:09] [INFO] 准备启动API服务...
+[2025-10-15 13:33:14] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:33:24] [INFO] File uploaded successfully from 192.168.43.242: 1760506404_hVmp1GTB.jpg
+[2025-10-15 13:33:24] [INFO] [开始等待稳定] userdata\uploads\1760506404_hVmp1GTB.jpg
+[2025-10-15 13:33:24] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:33:34] [INFO] [文件稳定] userdata\uploads\1760506404_hVmp1GTB.jpg
+[2025-10-15 13:33:34] [INFO] 检测到图像文件，开始OCR处理: userdata\uploads\1760506404_hVmp1GTB.jpg
+[2025-10-15 13:33:35] [INFO] OCR处理完成，结果保存至: userdata/extract\OCR_result_1760506415_ukek8W5z.txt
+[2025-10-15 13:33:35] [INFO] [ProcessDB] 成功插入事件 event_id=1
+[2025-10-15 13:37:20] [INFO] 文件监控线程已启动
+[2025-10-15 13:37:20] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 13:37:20] [INFO] 准备启动API服务...
+[2025-10-15 13:37:20] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 13:37:31] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:37:39] [INFO] File uploaded successfully from 192.168.43.242: 1760506659_CBk8hs2x.jpg
+[2025-10-15 13:37:39] [INFO] [开始等待稳定] userdata\uploads\1760506659_CBk8hs2x.jpg
+[2025-10-15 13:37:39] [INFO] Index page accessed from 192.168.43.242. Files listed.
+[2025-10-15 13:37:49] [INFO] [文件稳定] userdata\uploads\1760506659_CBk8hs2x.jpg
+[2025-10-15 13:37:49] [INFO] 检测到图像文件，开始OCR处理: userdata\uploads\1760506659_CBk8hs2x.jpg
+[2025-10-15 13:37:49] [INFO] OCR处理完成，结果保存至: userdata/extract\OCR_result_1760506669_zmT9ur2Y.txt
+[2025-10-15 13:37:49] [INFO] [ProcessDB] 成功插入事件 event_id=2
+[2025-10-15 14:03:27] [ERROR] Daily work error: HTTPSConnectionPool(host='downloads.bbc.co.uk', port=443): Max retries exceeded with url: /learningenglish/features/6min/250731_6_minute_english_what_is_the_manosphere_download.mp3 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+[2025-10-15 14:13:10] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-16\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:13:11] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-17\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:49] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-16\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:51] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-17\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:52] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-18\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:54] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-19\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:56] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-20\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:57] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-21\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:14:58] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-22\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:00] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-23\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:02] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-24\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:04] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-25\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:05] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-26\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:07] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-27\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:09] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-28\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:10] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-29\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:11] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-30\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 14:15:13] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-31\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
