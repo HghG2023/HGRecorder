@@ -7,3 +7,4 @@ resources/nerModel
 resources/yolo5
 *.bat
 *.zip
+userdata/
