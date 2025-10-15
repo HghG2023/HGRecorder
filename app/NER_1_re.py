@@ -112,7 +112,7 @@ class NERProcessor:
             token = token.replace("年", "-").replace("月", "-").replace("日", "").replace(" ", "")
             return token
         if re.match(r"\d{1,2}[月/-]\d{1,2}", token):
-            parts = re.split(r"[月/-]", token.replace("日", "")).replace(" ", "")
+            parts = re.split(r"[月/-]", token.replace("日", "").replace(" ", ""))
             return f"{base_date.year}-{int(parts[0]):02d}-{int(parts[1]):02d}"
 
         # ---- 简单口语 ----
