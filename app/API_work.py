@@ -5,7 +5,7 @@ from pathlib import Path
 from scripts.get_date_formate import today
 from scripts.path_control import PM
 from scripts.unique_string_generate import unique_name
-# from bbcLearning import bbc
+from bbcLearning import bbc
 from scripts.logger import logger
 
 # 引入数据库处理类
@@ -157,26 +157,23 @@ def create_app() -> FastAPI:
     
     @app.get("/learn/", response_class=HTMLResponse)
     async def learn_page(request: Request):
-        return None
         article = bbc.doing
-        
-        # print("原始数据:", article)
-        
-        # 标准化路径格式
-        if 'path_audio' in article:
-            # 确保路径以 userdata/ 开头，并使用正斜杠
-            article['path_audio'] = article['path_audio'].replace('\\', '/')
-            if not article['path_audio'].startswith('userdata/'):
-                article['path_audio'] = 'userdata/' + article['path_audio']
-        
-        if 'path_pdf' in article:
-            article['path_pdf'] = article['path_pdf'].replace('\\', '/')
-            if not article['path_pdf'].startswith('userdata/'):
-                article['path_pdf'] = 'userdata/' + article['path_pdf']
-    
-        # print("修正后数据:", article)
-        
-        return templates.TemplateResponse("learn.html", {"request": request, "article": article})
+        if article is None:
+            raise HTTPException(404, "文章不存在")
+        else:
+            # 标准化路径格式
+            if 'path_audio' in article:
+                # 确保路径以 userdata/ 开头，并使用正斜杠
+                article['path_audio'] = article['path_audio'].replace('\\', '/')
+                if not article['path_audio'].startswith('userdata/'):
+                    article['path_audio'] = 'userdata/' + article['path_audio']
+            
+            if 'path_pdf' in article:
+                article['path_pdf'] = article['path_pdf'].replace('\\', '/')
+                if not article['path_pdf'].startswith('userdata/'):
+                    article['path_pdf'] = 'userdata/' + article['path_pdf']
+
+            return templates.TemplateResponse("learn.html", {"request": request, "article": article})
 
     @app.get("/userdata/{file_path:path}")
     async def get_userdata_file(file_path: str):

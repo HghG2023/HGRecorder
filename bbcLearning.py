@@ -13,7 +13,7 @@ class BbcLearning:
         self.baseurl = "https://www.bbc.co.uk"
         self.Bbc_dir = PM.get_env("BBC_DIR_PATH")
         self.filepath = PM.get_env("BBC_JSON_PATH")
-        # self.doing = self.daily_work()
+        self.doing = self.daily_work()
         
     def save_json(self):
         with open(self.filepath, "w", encoding="utf-8") as f:
@@ -113,9 +113,9 @@ class BbcLearning:
         with open(path, "r", encoding="utf-8") as f:
             return f.readlines()
 
-    def daily_work(self, daily_folder):
+    def daily_work(self):
 
-        # daily_folder = today()
+        daily_folder = today()
         daily_folder_path = os.path.join(self.Bbc_dir, daily_folder)
         
         if os.path.exists(daily_folder_path):
@@ -135,7 +135,7 @@ class BbcLearning:
                         "path_pdf": os.path.join(daily_folder_path, pdf_files[0]),
                     }
                     return doing
-        
+        return None
         try:
             article = self.get_next()
             if article:
@@ -169,11 +169,6 @@ class BbcLearning:
             logger.error(f"Daily work error: {e}")
             return None
 
-
+bbc = BbcLearning()
 if __name__ == "__main__":
-    bbc = BbcLearning()
-    for folder in range(1, 20, 1):
-        daily_folder = f"2025-11-{folder:02}"
-        x = bbc.daily_work(daily_folder=daily_folder)
-        if x:
-            print("Download Successfully, into {daily_folder}, title: {title}".format(daily_folder=daily_folder, title=x["title"]))
+    pass

@@ -4,8 +4,6 @@ from scripts.unique_string_generate import unique_name
 from scripts.path_control import PM
 from scripts.Tools import w
 from scripts.logger import logger
-
-print(paddleocr.__version__)
 class OCRProcessor:
     def __init__(self,sensitivity = 0.5, lang='ch', use_gpu=False):
         """Initialize OCR with specified model paths."""

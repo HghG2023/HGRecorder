@@ -69,3 +69,11 @@
 [2025-10-15 14:15:10] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-29\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
 [2025-10-15 14:15:11] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-30\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
 [2025-10-15 14:15:13] [ERROR] Daily work error: [Errno 2] No such file or directory: 'userdata/BBC\\2025-10-31\\251009_6_minute_english_what_makes_a_good_citizen_transcript_.pdf'
+[2025-10-15 15:06:12] [INFO] 文件监控线程已启动
+[2025-10-15 15:06:12] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 15:06:12] [INFO] 📂 正在监控：userdata\uploads（Ctrl+C 退出）
+[2025-10-15 15:06:12] [INFO] 准备启动API服务...
+[2025-10-15 15:06:29] [INFO] Unauthorized access attempt to the index page from 10.4.70.241.
+[2025-10-15 15:06:29] [INFO] Login page accessed from 10.4.70.241.
+[2025-10-15 15:06:34] [INFO] Login successful from 10.4.70.241.
+[2025-10-15 15:06:34] [INFO] Index page accessed from 10.4.70.241. Files listed.
