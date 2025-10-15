@@ -9,3 +9,4 @@ resources/yolo5
 *.zip
 userdata/
 *.log
+*.db
