@@ -5,7 +5,7 @@ from scripts.path_control import PM
 from scripts.logger import logger
 from api.auth import verify_auth
 from scripts.DBprocessor import ProcessDB
-from bbcLearning import bbc
+from app.bbcLearning import BbcLearning
 from pathlib import Path
 
 router = APIRouter(tags=["Pages"])
@@ -26,7 +26,7 @@ async def daily(request: Request):
 
 @router.get("/learn/", response_class=HTMLResponse)
 async def learn(request: Request):
-    article = bbc.doing
+    article = BbcLearning().doing
     if not article:
         raise HTTPException(404, "文章不存在")
     # 修正路径

@@ -5,7 +5,7 @@ from pathlib import Path
 from scripts.get_date_formate import today
 from scripts.path_control import PM
 from scripts.unique_string_generate import unique_name
-from bbcLearning import bbc
+from app.bbcLearning import bbc
 from scripts.logger import logger
 
 # 引入数据库处理类
