@@ -16,7 +16,8 @@ db = ProcessDB()
 async def index(request: Request):
     if request.cookies.get(PM.get_env("COOKIE_NAME")) != "true":
         return RedirectResponse("/login")
-    files = [f.name for f in Path(PM.get_env("UPLOAD_DIR_PATH")).iterdir() if f.is_file()]
+    # files = [f.name for f in Path(PM.get_env("UPLOAD_DIR_PATH")).iterdir() if f.is_file()]
+    files = []
     return templates.TemplateResponse("index.html", {"request": request, "files": files})
 
 @router.get("/daily/", response_class=HTMLResponse)
