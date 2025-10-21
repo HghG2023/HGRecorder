@@ -99,7 +99,8 @@ class NERProcessor:
             "weeks": self.week_pattern.findall(text),
             "places": self.place_pattern.findall(text),
             "persons": self.person_pattern.findall(text),
-            "events": self.event_pattern.findall(text),
+            "events_extract": self.event_pattern.findall(text),
+            "events_full": text.split('\n'),
             "durations": self.duration_pattern.findall(text),
         }
 
@@ -174,22 +175,12 @@ class NERProcessor:
         """批量解析日期表达"""
         return [self.resolve_date(tok, base_date) for tok in tokens]
     
-
-    def full_result(self,result, full_text):
-        # if result["events"] == []:
-        result["events"] = full_text.split('\n')
-        if isinstance(result["events"], list):
-            result["events"] = ''.join(result["events"])
-        return result
-
     def process_text(self, text_path):
-
-
+        """处理文本"""
         text = r(text_path)
         result = self.parse(text)
         base = datetime.today()  # 基准日期
         resolved = self.resolve_dates(result["dates"], base)
         result["dates"] = resolved
-        res_txt = self.full_result(result, text)
-
-        return res_txt
+        
+        return result

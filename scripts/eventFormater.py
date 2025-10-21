@@ -32,7 +32,6 @@ def format_events(data: Union[Dict[str, Any], List[Dict[str, Any]]],
                 ):
                     try:
                         parsed = json.loads(stripped)
-
                         # persons 字段特别处理
                         if key == "persons" and isinstance(parsed, list):
                             cleaned = []

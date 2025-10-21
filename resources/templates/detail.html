@@ -149,7 +149,7 @@
     {% elif key == "times" %}
       <input type="time" name="{{ key }}" value="{{ value or '' }}">
 
-    {% elif key in ["events", "tags"] %}
+    {% elif key in ["events_extract","events_full", "tags"] %}
       <textarea name="{{ key }}">{{ value or '' }}</textarea>
 
     {% else %}
