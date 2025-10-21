@@ -43,5 +43,5 @@ async def search_events(
     end_time: str = Query(None),
     min_importance: int = Query(None)
 ):
-    results = db.search_events(start_time=start_time, end_time=end_time, min_importance=min_importance)
+    results = db.search_events_all(start_time=start_time, end_time=end_time, min_importance=min_importance)
     return {"count": len(results), "events": results}
