@@ -4,7 +4,8 @@ from fastapi.templating import Jinja2Templates
 from scripts.path_control import PM
 from scripts.logger import logger
 from api.auth import verify_auth
-from scripts.DBprocessor import ProcessDB
+from database.processor import ProcessDB
+from database.dataSelect import Selector
 from app.bbcLearning import BbcLearning
 from pathlib import Path
 
@@ -23,7 +24,8 @@ async def index(request: Request):
 @router.get("/daily/", response_class=HTMLResponse)
 async def daily(request: Request):
     events = db.search_events_undo()
-    return templates.TemplateResponse("daily.html", {"request": request, "events": events})
+    events_selected = Selector.get_infomotions(events, needtype = 'daily')
+    return templates.TemplateResponse("daily.html", {"request": request, "events": events_selected})
 
 @router.get("/learn/", response_class=HTMLResponse)
 async def learn(request: Request):
@@ -41,9 +43,10 @@ async def learn(request: Request):
 @router.get("/detail/{event_id}", response_class=HTMLResponse)
 async def event_detail(request: Request, event_id: int):
     event = db.read_event(event_id)
-    if not event:
+    events_selected = Selector.get_infomotions([event], needtype = 'detail')
+    if not events_selected[0]:
         raise HTTPException(404, "事件不存在")
-    return templates.TemplateResponse("detail.html", {"request": request, "event": event})
+    return templates.TemplateResponse("detail.html", {"request": request, "event": events_selected[0]})
 
 
 

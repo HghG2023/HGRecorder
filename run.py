@@ -3,17 +3,17 @@ import threading
 import uvicorn
 from api.mainapi import create_api_app
 from app.detect_folder import start_watch
-from app.ASR import ASEProcessor
-from app.OCR import OCRProcessor
+# from app.ASR import ASEProcessor
+# from app.OCR import OCRProcessor
 from app.NER_1_re import NERProcessor
 from scripts.path_control import PM
 from scripts.logger import logger
 from scripts.Tools import r
-from scripts.DBprocessor import ProcessDB
+from database.processor import ProcessDB
 
 # 初始化处理器实例
-asr_processor = ASEProcessor()
-ocr_processor = OCRProcessor()
+# asr_processor = ASEProcessor()
+# ocr_processor = OCRProcessor()
 ner_processor = NERProcessor()
 
 
@@ -94,10 +94,6 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-        # from scripts.DBprocessor import ProcessDB
-        # c_db = ProcessDB()
-        # print(c_db.search_events_undo())
-
     except KeyboardInterrupt:
         logger.info("用户中断，程序退出")
     except Exception as e:

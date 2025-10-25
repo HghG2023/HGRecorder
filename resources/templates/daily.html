@@ -238,7 +238,7 @@
     function markAsDone(eventId) {
       // 发送请求到后端更新数据库
 
-      fetch(`/api/events/${eventId}`, {
+      fetch(`/events/${eventId}`, {
         method: 'PUT',  // 改为PUT方法
         headers: {
           'Content-Type': 'application/json',

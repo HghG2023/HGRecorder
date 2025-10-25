@@ -130,7 +130,7 @@
   <div class="field">
     <label>{{ key }}</label>
 
-    {% if key in ["event_id", "file_original", "file_processed", "created_at"] %}
+    {% if key in ["event_id", "file_original", "file_processed", "created_at","events_full","updated_at","schema_version"] %}
       {# 显示但不可编辑 #}
       <input type="text" name="{{ key }}" value="{{ value or '' }}" readonly>
 
@@ -140,16 +140,16 @@
         <option value="1" {% if value == 1 %}selected{% endif %}>已完成</option>
       </select>
 
-    {% elif key in ["importance", "confidence"] %}
+    {% elif key in ["importance"] %}
       <input type="number" step="0.1" name="{{ key }}" value="{{ value or '' }}">
 
     {% elif key == "dates" %}
-      <input type="date" name="{{ key }}" value="{{ value or '' }}">
+      <input type="text" name="{{ key }}" value="{{ value or '' }}">
 
     {% elif key == "times" %}
-      <input type="time" name="{{ key }}" value="{{ value or '' }}">
+      <input type="text" name="{{ key }}" value="{{ value or '' }}">
 
-    {% elif key in ["events_extract","events_full", "tags"] %}
+    {% elif key in ["events_extract", "tags"] %}
       <textarea name="{{ key }}">{{ value or '' }}</textarea>
 
     {% else %}
@@ -177,7 +177,7 @@ async function saveEvent() {
   for (let [k, v] of formData.entries()) data[k] = v;
 
   const eventId = "{{ event['event_id'] | default('0') }}"; // Jinja 渲染
-  const resp = await fetch(`/api/events/${eventId}`, {
+  const resp = await fetch(`/events/${eventId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
