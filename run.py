@@ -3,8 +3,8 @@ import threading
 import uvicorn
 from api.mainapi import create_api_app
 from app.detect_folder import start_watch
-# from app.ASR import ASEProcessor
-# from app.OCR import OCRProcessor
+from app.ASR import ASEProcessor
+from app.OCR import OCRProcessor
 from app.NER_1_re import NERProcessor
 from scripts.path_control import PM
 from scripts.logger import logger
@@ -12,8 +12,8 @@ from scripts.Tools import r
 from database.processor import ProcessDB
 
 # 初始化处理器实例
-# asr_processor = ASEProcessor()
-# ocr_processor = OCRProcessor()
+asr_processor = ASEProcessor()
+ocr_processor = OCRProcessor()
 ner_processor = NERProcessor()
 
 
