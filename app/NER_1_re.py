@@ -151,9 +151,7 @@ class NERProcessor:
             "durations": [m[0] for m in self.duration_pattern.findall(text)],
             "recurrences": self.extract_recurrence(text),  # ✅ 新增周期性结果
         }
-        for key, value in results.items():
-            if results[key] == []:
-                results[key] = None
+
         return results
 
     # ----------------------------------------------------------------------
@@ -229,4 +227,8 @@ class NERProcessor:
         base = datetime.today()
         resolved = self.resolve_dates(result["dates"], base)
         result["dates"] = resolved
+
+        for key, value in result.items():
+            if value == []:
+                result[key] = None
         return {"ner_extract": result}
