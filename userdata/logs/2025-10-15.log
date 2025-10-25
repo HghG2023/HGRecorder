@@ -155,3 +155,120 @@
 [2025-10-15 19:06:59] [INFO] 检测到文本文件，开始NER处理: userdata\uploads\1760526409_5zarFBUx.txt
 [2025-10-15 19:06:59] [INFO] [ProcessDB] 成功插入事件 event_id=4
 [2025-10-15 19:07:27] [INFO] [ProcessDB] 更新事件成功 event_id=4
+[2025-10-15 19:20:55] [INFO] [ProcessDB] 使用数据库路径: userdata/events_data.db
+[2025-10-15 19:21:08] [INFO] 文件监控线程已启动
+[2025-10-15 19:21:08] [INFO] 准备启动API服务...
+[2025-10-15 19:21:08] [INFO] 📂 正在监控：userdata/uploads（Ctrl+C 退出）
+[2025-10-15 19:21:18] [INFO] 登录成功：124.126.96.63
+[2025-10-15 20:16:25] [WARNING] 登录失败：124.126.96.53
+[2025-10-15 20:16:29] [WARNING] 登录失败：124.126.96.53
+[2025-10-15 20:16:35] [WARNING] 登录失败：124.126.96.53
+[2025-10-15 20:16:46] [WARNING] 登录失败：124.126.96.53
+[2025-10-15 20:18:11] [INFO] 登录成功：124.126.96.53
+[2025-10-15 20:18:53] [INFO] Text uploaded successfully from 124.126.96.53: 1760530733_jy1fW8Gh.txt
+[2025-10-15 20:18:53] [INFO] [开始等待稳定] userdata/uploads/1760530733_jy1fW8Gh.txt
+[2025-10-15 20:19:03] [INFO] [文件稳定] userdata/uploads/1760530733_jy1fW8Gh.txt
+[2025-10-15 20:19:03] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760530733_jy1fW8Gh.txt
+[2025-10-15 20:19:03] [INFO] [ProcessDB] 成功插入事件 event_id=5
+[2025-10-15 20:20:31] [INFO] [ProcessDB] 更新事件成功 event_id=5
+[2025-10-15 20:21:55] [INFO] Text uploaded successfully from 124.126.96.53: 1760530915_MZNYqCyD.txt
+[2025-10-15 20:21:55] [INFO] [开始等待稳定] userdata/uploads/1760530915_MZNYqCyD.txt
+[2025-10-15 20:22:05] [INFO] [文件稳定] userdata/uploads/1760530915_MZNYqCyD.txt
+[2025-10-15 20:22:05] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760530915_MZNYqCyD.txt
+[2025-10-15 20:22:05] [INFO] [ProcessDB] 成功插入事件 event_id=6
+[2025-10-15 20:22:54] [INFO] File downloaded successfully from 124.126.96.113: 1760514174_FKcaismj.txt
+[2025-10-15 20:23:24] [INFO] File downloaded successfully from 124.126.96.113: 1760530733_jy1fW8Gh.txt
+[2025-10-15 20:24:16] [INFO] [ProcessDB] 更新事件成功 event_id=6
+[2025-10-15 20:29:47] [INFO] Text uploaded successfully from 124.126.96.113: 1760531387_YbrON2iZ.txt
+[2025-10-15 20:29:47] [INFO] [开始等待稳定] userdata/uploads/1760531387_YbrON2iZ.txt
+[2025-10-15 20:29:57] [INFO] [文件稳定] userdata/uploads/1760531387_YbrON2iZ.txt
+[2025-10-15 20:29:57] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760531387_YbrON2iZ.txt
+[2025-10-15 20:29:57] [INFO] [ProcessDB] 成功插入事件 event_id=7
+[2025-10-15 20:31:43] [INFO] [ProcessDB] 更新事件成功 event_id=7
+[2025-10-15 20:32:01] [INFO] [ProcessDB] 更新事件成功 event_id=7
+[2025-10-15 20:35:18] [INFO] File uploaded successfully from 223.104.41.121: 1760531718_YZjB8z8R.jpg
+[2025-10-15 20:35:18] [INFO] [开始等待稳定] userdata/uploads/1760531718_YZjB8z8R.jpg
+[2025-10-15 20:35:29] [INFO] [文件稳定] userdata/uploads/1760531718_YZjB8z8R.jpg
+[2025-10-15 20:35:29] [INFO] 检测到图像文件，开始OCR处理: userdata/uploads/1760531718_YZjB8z8R.jpg
+[2025-10-15 20:35:35] [INFO] OCR处理完成，结果保存至: userdata/extract/OCR_result_1760531735_bEPOR6nB.txt
+[2025-10-15 20:35:35] [INFO] [ProcessDB] 成功插入事件 event_id=8
+[2025-10-15 20:36:36] [INFO] [ProcessDB] 更新事件成功 event_id=8
+[2025-10-15 20:36:52] [INFO] [ProcessDB] 更新事件成功 event_id=8
+[2025-10-15 20:38:36] [INFO] [ProcessDB] 更新事件成功 event_id=8
+[2025-10-15 20:41:27] [INFO] Text uploaded successfully from 124.126.96.113: 1760532087_tcznH9Ss.txt
+[2025-10-15 20:41:27] [INFO] [开始等待稳定] userdata/uploads/1760532087_tcznH9Ss.txt
+[2025-10-15 20:41:37] [INFO] [文件稳定] userdata/uploads/1760532087_tcznH9Ss.txt
+[2025-10-15 20:41:37] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760532087_tcznH9Ss.txt
+[2025-10-15 20:41:37] [INFO] [ProcessDB] 成功插入事件 event_id=9
+[2025-10-15 21:44:30] [INFO] 登录成功：223.104.41.121
+[2025-10-15 21:44:52] [INFO] Text uploaded successfully from 223.104.41.121: 1760535892_YeROr2uZ.txt
+[2025-10-15 21:44:52] [INFO] [开始等待稳定] userdata/uploads/1760535892_YeROr2uZ.txt
+[2025-10-15 21:45:02] [INFO] [文件稳定] userdata/uploads/1760535892_YeROr2uZ.txt
+[2025-10-15 21:45:02] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760535892_YeROr2uZ.txt
+[2025-10-15 21:45:02] [INFO] [ProcessDB] 成功插入事件 event_id=10
+[2025-10-16 02:22:29] [INFO] 登录成功：223.104.41.121
+[2025-10-16 11:27:34] [INFO] 登录成功：223.104.41.121
+[2025-10-16 15:02:48] [WARNING] 登录失败：223.104.41.121
+[2025-10-16 15:02:53] [INFO] 登录成功：223.104.41.121
+[2025-10-16 15:02:58] [INFO] [ProcessDB] 更新事件成功 event_id=10
+[2025-10-16 15:21:28] [INFO] 登录成功：124.64.22.134
+[2025-10-17 12:58:04] [INFO] 登录成功：223.104.44.48
+[2025-10-17 12:58:10] [INFO] Text uploaded successfully from 223.104.44.48: 1760677090_hWXcktYq.txt
+[2025-10-17 12:58:10] [INFO] [开始等待稳定] userdata/uploads/1760677090_hWXcktYq.txt
+[2025-10-17 12:58:20] [INFO] [文件稳定] userdata/uploads/1760677090_hWXcktYq.txt
+[2025-10-17 12:58:20] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760677090_hWXcktYq.txt
+[2025-10-17 12:58:20] [INFO] [ProcessDB] 成功插入事件 event_id=11
+[2025-10-17 12:58:53] [INFO] Text uploaded successfully from 223.104.44.48: 1760677133_EZXvrna7.txt
+[2025-10-17 12:58:53] [INFO] [开始等待稳定] userdata/uploads/1760677133_EZXvrna7.txt
+[2025-10-17 12:59:03] [INFO] [文件稳定] userdata/uploads/1760677133_EZXvrna7.txt
+[2025-10-17 12:59:03] [INFO] 检测到文本文件，开始NER处理: userdata/uploads/1760677133_EZXvrna7.txt
+[2025-10-17 12:59:03] [INFO] [ProcessDB] 成功插入事件 event_id=12
+[2025-10-17 20:47:05] [INFO] 登录成功：223.104.40.173
+[2025-10-17 20:47:19] [INFO] [开始等待稳定] userdata/uploads/1760705239_9kujjyrj.jpg
+[2025-10-17 20:47:19] [INFO] File uploaded successfully from 223.104.40.173: 1760705239_9kujjyrj.jpg
+[2025-10-17 20:47:29] [INFO] [文件稳定] userdata/uploads/1760705239_9kujjyrj.jpg
+[2025-10-17 20:47:29] [INFO] 检测到图像文件，开始OCR处理: userdata/uploads/1760705239_9kujjyrj.jpg
+[2025-10-17 20:47:29] [ERROR] 文件处理失败 userdata/uploads/1760705239_9kujjyrj.jpg: could not execute a primitive
+Traceback (most recent call last):
+  File "/home/admin/hgrecorder/run.py", line 41, in handle_new_file
+    result = ocr_processor.process_image(file_path)
+  File "/home/admin/hgrecorder/app/OCR.py", line 21, in process_image
+    results = self.ocr.ocr(image_path, cls=False)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/paddleocr.py", line 766, in ocr
+    dt_boxes, rec_res, _ = self.__call__(img, cls, slice)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/tools/infer/predict_system.py", line 109, in __call__
+    dt_boxes, elapse = self.text_detector(img)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/tools/infer/predict_det.py", line 396, in __call__
+    dt_boxes, elapse = self.predict(img)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/tools/infer/predict_det.py", line 255, in predict
+    self.predictor.run()
+RuntimeError: could not execute a primitive
+[2025-10-17 20:47:29] [ERROR] [处理出错] userdata/uploads/1760705239_9kujjyrj.jpg: could not execute a primitive
+Traceback (most recent call last):
+  File "/home/admin/hgrecorder/app/detect_folder.py", line 109, in _wait_and_callback
+    self.user_callback(str(stable_path))
+  File "/home/admin/hgrecorder/run.py", line 41, in handle_new_file
+    result = ocr_processor.process_image(file_path)
+  File "/home/admin/hgrecorder/app/OCR.py", line 21, in process_image
+    results = self.ocr.ocr(image_path, cls=False)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/paddleocr.py", line 766, in ocr
+    dt_boxes, rec_res, _ = self.__call__(img, cls, slice)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/tools/infer/predict_system.py", line 109, in __call__
+    dt_boxes, elapse = self.text_detector(img)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/tools/infer/predict_det.py", line 396, in __call__
+    dt_boxes, elapse = self.predict(img)
+  File "/home/admin/miniconda3/envs/HGRecorder/lib/python3.10/site-packages/paddleocr/tools/infer/predict_det.py", line 255, in predict
+    self.predictor.run()
+RuntimeError: could not execute a primitive
+[2025-10-17 20:47:40] [INFO] [ProcessDB] 更新事件成功 event_id=11
+[2025-10-17 21:01:30] [INFO] File uploaded successfully from 223.104.40.173: 1760706090_GbiPXkf5.jpg
+[2025-10-17 21:01:30] [INFO] [开始等待稳定] userdata/uploads/1760706090_GbiPXkf5.jpg
+[2025-10-17 21:01:40] [INFO] [文件稳定] userdata/uploads/1760706090_GbiPXkf5.jpg
+[2025-10-17 21:01:40] [INFO] 检测到图像文件，开始OCR处理: userdata/uploads/1760706090_GbiPXkf5.jpg
+[2025-10-17 21:01:44] [INFO] OCR处理完成，结果保存至: userdata/extract/OCR_result_1760706104_5bACnGvk.txt
+[2025-10-17 21:01:44] [INFO] [ProcessDB] 成功插入事件 event_id=13
+[2025-10-18 01:48:49] [INFO] 登录成功：223.104.40.173
+[2025-10-18 13:28:20] [INFO] 登录成功：223.104.40.173
+[2025-10-18 13:30:09] [INFO] [ProcessDB] 更新事件成功 event_id=9
+[2025-10-18 13:31:10] [INFO] [ProcessDB] 更新事件成功 event_id=9
+[2025-10-18 13:31:34] [INFO] [ProcessDB] 更新事件成功 event_id=9
