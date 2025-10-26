@@ -18,7 +18,7 @@ class DateExtractor(BaseExtractor):
             # 相对日期
             r'(今天|明天|昨天|前天|后天|大前天|大后天)|'
             # 周次表达
-            r'(本周|下周|上周)?(周|星期)[一二三四五六天日]|'
+            r'((?:本|下|上)?周[一二三四五六天日]|(?:本|下|上)?星期[一二三四五六天日])|'
             # 月份相对表达
             r'(上|本|下)个?月(\d{1,2}|[一二三四五六七八九十]{1,3})?[日号]?|'
             # 特殊节日与模糊时间
@@ -37,6 +37,7 @@ class DateExtractor(BaseExtractor):
         """
         dates = [m.group("date").strip() for m in self.pattern.finditer(text)]
         res = self.normalize(dates)
+        # print("原始：", dates, "标准化：", res)
 
         if not res:
             if default == "today":
@@ -172,4 +173,7 @@ class DateExtractor(BaseExtractor):
 
         return normalized
 
-
+if __name__ == "__main__":
+    extractor = DateExtractor()
+    text = """周日13:00考试，机械动力学，提前复习"""
+    print(extractor.extract(text))
