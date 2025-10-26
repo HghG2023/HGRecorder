@@ -139,20 +139,21 @@ class NERProcessor:
     # ----------------------------------------------------------------------
 
     def parse(self, text: str) -> dict:
-        """提取原始事件信息（新增周期性识别）"""
+        """提取原始事件信息（新增周期性识别）——修复：使用 finditer() 并取 group 名称"""
         results = {
-            "dates": [m[0] for m in self.date_full.findall(text)],
-            "times": [m[0] for m in self.time_simple.findall(text)],
-            "weeks": [m[0] for m in self.weekday.findall(text)],
-            "places": [m[0] for m in self.place_pattern.findall(text)],
-            "persons": [m[0] for m in self.person_pattern.findall(text)],
-            "events_extract": [m[0] for m in self.event_pattern.findall(text)],
+            "dates": [m.group('date_full') for m in self.date_full.finditer(text)],
+            "times": [m.group('time') for m in self.time_simple.finditer(text)],
+            "weeks": [m.group('weekday') for m in self.weekday.finditer(text)],
+            "places": [m.group('place') for m in self.place_pattern.finditer(text)],
+            "persons": [m.group('person') for m in self.person_pattern.finditer(text)],
+            "events_extract": [m.group('event') for m in self.event_pattern.finditer(text)],
             "events_full": text.replace("\n", ""),
-            "durations": [m[0] for m in self.duration_pattern.findall(text)],
-            "recurrences": self.extract_recurrence(text),  # ✅ 新增周期性结果
+            "durations": [m.group('duration') for m in self.duration_pattern.finditer(text)],
+            "recurrences": self.extract_recurrence(text),
         }
 
         return results
+
 
     # ----------------------------------------------------------------------
 
@@ -228,7 +229,5 @@ class NERProcessor:
         resolved = self.resolve_dates(result["dates"], base)
         result["dates"] = resolved
 
-        for key, value in result.items():
-            if value == []:
-                result[key] = None
+
         return {"ner_extract": result}

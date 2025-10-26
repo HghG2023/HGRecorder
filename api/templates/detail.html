@@ -80,6 +80,18 @@
       resize: vertical;
       min-height: 80px;
     }
+    
+    textarea[readonly] {
+      background-color: #f2f4f8;
+      color: #555;
+      border-color: #ccc;
+      cursor: not-allowed;
+      resize: none;              /* 禁止手动调整 */
+      white-space: pre-wrap;     /* 保留换行并自动换行 */
+      word-wrap: break-word;     /* 长词自动断行 */
+      overflow-y: hidden;        /* 无滚动条 */
+    }
+
 
     .actions {
       display: flex;
@@ -132,7 +144,7 @@
 
     {% if key in ["event_id", "file_original", "file_processed", "created_at","events_full","updated_at","schema_version"] %}
       {# 显示但不可编辑 #}
-      <input type="text" name="{{ key }}" value="{{ value or '' }}" readonly>
+      <textarea name="{{ key }}" readonly>{{ value or '' }}</textarea>
 
     {% elif key == "done" %}
       <select name="{{ key }}">
