@@ -18,7 +18,6 @@ class TimeExtractor(BaseExtractor):
     name = "times"
 
     def __init__(self):
-
         abs_time_pattern = (
             r"(?P<absolute>"
             r"(?:"
@@ -27,10 +26,10 @@ class TimeExtractor(BaseExtractor):
             r"(?:\s*[-~到至]\s*(?:[01]?\d|2[0-3])[:：][0-5]\d)?"
             r"|"
             # 中文时间 上午/下午/早上/晚上 10点半 10点10分
-            r"(?:上午|下午|中午|早上|晚上)?\s?(?:[0-1]?\d|2[0-3])\s?点(?:半|半钟)?(?:\d{1,2}分)?"
+            r"(?:上午|下午|中午|早上|晚上|凌晨)?\s*([\d" + CN_NUM_PATTERN + r"]+)\s?点(?:半|半钟)?(?:([\d" + CN_NUM_PATTERN + r"]+)分)?"
             r"|"
             # 中文时 10时10分
-            r"\d{1,2}时(?:\d{1,2}分)?"
+            r"([\d" + CN_NUM_PATTERN + r"]+)时(?:([\d" + CN_NUM_PATTERN + r"]+)分)?"
             r")"
             r")"
         )
@@ -41,7 +40,7 @@ class TimeExtractor(BaseExtractor):
             r"((\d+|" + CN_NUM_PATTERN + r"|几)\s*(分钟|小时|天|日))后|"  # 数字+单位+后
             r"一会儿|马上|明天|后天|大后天"
             r")"
-)
+        )
 
         self.pattern = re.compile(f'{abs_time_pattern}|{rel_time_pattern}', re.U)
 
@@ -63,38 +62,60 @@ class TimeExtractor(BaseExtractor):
                     times.append(normalized)
         return times
 
-    def chinese_to_digit(self, s: str) -> float:
+    def chinese_to_digit(self, s: str) -> int:
         if not s:
             return 0
         s = s.strip()
-        return CN_NUM.get(s, None) or float(s) if s.isdigit() else 0
+        if s.isdigit():
+            return int(s)
+        return CN_NUM.get(s, 0)
 
     def normalize_absolute(self, match: re.Match) -> str:
-        period = match.group(2)
-        hour_str = match.group(3)
-        minute_str = match.group(4)
-        half = match.group(5)
+        time_str = match.group("absolute")
 
-        hour = int(self.chinese_to_digit(hour_str))
-        minute = 0
+        # 1. 24小时制 HH:MM
+        m1 = re.match(r'(\d{1,2})[:：](\d{1,2})', time_str)
+        if m1:
+            hour = int(m1.group(1))
+            minute = int(m1.group(2))
+            hour = max(0, min(hour, 23))
+            minute = max(0, min(minute, 59))
+            return f"{hour:02d}:{minute:02d}"
 
-        if half == "半":
-            minute = 30
-        elif minute_str:
-            minute = int(self.chinese_to_digit(minute_str))
+        # 2. 中文时间（含点、半、分钟、时段）
+        m2 = re.match(r'(上午|下午|中午|早上|晚上|凌晨)?\s*([\d' + CN_NUM_PATTERN + r']+)点(?:半|半钟)?(?:([\d' + CN_NUM_PATTERN + r']+)分)?', time_str)
+        if m2:
+            period = m2.group(1)
+            hour_str = m2.group(2)
+            minute_str = m2.group(3)
+            hour = self.chinese_to_digit(hour_str)
+            minute = 0
+            if "半" in time_str:
+                minute = 30
+            elif minute_str:
+                minute = self.chinese_to_digit(minute_str)
 
-        # 时段处理
-        if period in PERIOD_MAP:
-            if PERIOD_MAP[period] == 12 and hour < 12:
-                hour += 12
-            elif period == "凌晨" and hour == 12:
-                hour = 0
+            # 时段处理
+            if period in PERIOD_MAP:
+                if PERIOD_MAP[period] == 12 and hour < 12:
+                    hour += 12
+                elif period == "凌晨" and hour == 12:
+                    hour = 0
 
-        # 限制小时范围
-        hour = max(0, min(hour, 23))
-        minute = max(0, min(minute, 59))
+            hour = max(0, min(hour, 23))
+            minute = max(0, min(minute, 59))
+            return f"{hour:02d}:{minute:02d}"
 
-        return f"{hour:02d}:{minute:02d}"
+        # 3. 中文“时”格式
+        m3 = re.match(r'([\d' + CN_NUM_PATTERN + r']+)时(?:([\d' + CN_NUM_PATTERN + r']+)分)?', time_str)
+        if m3:
+            hour = self.chinese_to_digit(m3.group(1))
+            minute = self.chinese_to_digit(m3.group(2)) if m3.group(2) else 0
+            hour = max(0, min(hour, 23))
+            minute = max(0, min(minute, 59))
+            return f"{hour:02d}:{minute:02d}"
+
+        return None
 
     def normalize_relative(self, match: re.Match) -> str:
         text = match.group("relative")
@@ -112,7 +133,7 @@ class TimeExtractor(BaseExtractor):
         elif text == "大后天":
             delta = timedelta(days=3)
         else:
-            m = re.match(r'(\d+|[一二三四五六七八九十]+|几)\s*(分钟|小时|天|日)后', text)
+            m = re.match(r'(\d+|[' + CN_NUM_PATTERN + r']+|几)\s*(分钟|小时|天|日)后', text)
             if m:
                 num = self.chinese_to_digit(m.group(1))
                 unit = m.group(2)
@@ -124,3 +145,7 @@ class TimeExtractor(BaseExtractor):
                     delta = timedelta(days=num)
         target_time = now + delta
         return target_time.strftime("%H:%M")
+
+# if __name__ == "__main__":
+#     Text = """'英文科技论文写作与学术报告', ' 网络课程 2025秋-英文科技论文写作与学术报告1班 开课时间： 2025-09-22/08:00 至 2025-12-28/23:59'"""
+#     print(TimeExtractor().extract(Text))
