@@ -49,7 +49,7 @@ def handle_new_file(file_path: str):
             raise
 
         # 文本处理, 合并dict
-        res_dict = ner_processor.process_text(result['file_processed']) | result
+        res_dict = ner_processor.process_text(result['file_processed']) | result # type: ignore
         
         # 数据存储
         c_db = ProcessDB()

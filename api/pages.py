@@ -7,6 +7,7 @@ from api.auth import verify_auth
 from database.processor import ProcessDB
 from database.dataSelect import Selector
 from app.bbcLearning import BbcLearning
+from scripts.get_date_formate import today
 from pathlib import Path
 
 router = APIRouter(tags=["Pages"])
@@ -48,7 +49,13 @@ async def event_detail(request: Request, event_id: int):
         raise HTTPException(404, "事件不存在")
     return templates.TemplateResponse("detail.html", {"request": request, "event": events_selected[0]})
 
-
+@router.get("/insight", response_class=HTMLResponse)
+async def insight(request: Request):
+    page_dir = PM.get_env("DAILYINSIGHT_DIR")
+    page_file = Path(page_dir) / f"daily_feed_{today()}.html"
+    if not page_file.is_file():
+        raise HTTPException(404, "页面不存在")
+    return FileResponse(page_file)
 
 @router.get("/userdata/{file_path:path}")
 async def get_userdata_file(file_path: str):
